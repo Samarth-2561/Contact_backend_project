@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Search</title>
+  </head>
+  <body>
+    <form class="" action="/search" method="post">
+      <input type="text" name="Value" placeholder="Search">
+      <p><input type="checkbox" name="name"> Name <input type="checkbox" name="phoneNumber">Phone Number <input type="checkbox" name="MIS"> MIS <input type="checkbox" name="Divison"> Divison</p>
+      <button type="Submit">Search</button>
+    </form>
+
+    <h1>Result: </h1>
+    <% for(i=0;i<Data.length;i++){ %>
+        <form class="" action="/search" method="post">
+          <input type="hidden" name="Value" value= <%=Data[i].MIS%> placeholder="Search">
+            <p> <input type="checkbox" name="MIS" onChange="this.form.submit()"> <%= Data[i].name %>  </p>
+        </form>
+    <% } %>
+  </body>
+</html>
